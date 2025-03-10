@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/style.css"  th:href="@{/css/style.css}"/>
+	<title>Home</title>
+</head>
+<body>
+	<div id="home_container">
+	
+		<div class="sub_container_4" id="home_top_part">
+			<div class="sub_container_5" id = "profile_container">
+				<h3>Your profile [<a href="Logout">Logout</a>]</h3>
+				<table>
+					<tr>
+						<td>username:</td>
+						<td th:if=" ${user != null}" th:text=" ${user.username}"></td>
+						<td>e-mail:</td>
+						<td th:if=" ${user != null}" th:text=" ${user.email}"></td>
+					</tr>
+					<tr>
+						<td>name:</td>
+						<td th:if=" ${user != null}" th:text=" ${user.name}"></td>
+						<td>surname:</td>
+						<td th:if=" ${user != null}" th:text=" ${user.surname}"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+		<div class="sub_container_4" id="home_down_part">
+			
+				<div class="sub_container_5" >
+					<h3 class="aligned_h3">self created</h3>
+					<table>
+						<thead>
+							<tr>
+							    <th class="home_id_th" scope="col">ID</th>
+								<th class="home_title_th" scope="col">Title</th>
+								<th scope="col">Date of creation</th>
+								<th class="home_duration_th" scope="col">Duration <br> [days]</th>
+								<th scope="col">Capacity</th>
+								<th scope="col">Detail</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="group : ${createdGroups}">
+								<td th:text="${group.id}" scope="row"></td>
+								<td th:text="${group.title}" scope="row"></td>
+								<td th:text="${group.startDate}" scope="row"></td>
+								<td th:text="${group.duration}" scope="row"></td>
+					            <td th:text="${group.minCapacity + ' - ' + group.maxCapacity}" scope="row"></td>
+								<td scope="row"><a th:href= "@{GetGroupDetails(idGroup = ${group.id})}">>></a></td>
+							</tr>
+						</tbody>
+					</table>	
+				</div>
+				<div class="sub_container_5" id="down_center_container">
+					<h3 class="aligned_h3">participated as invitee</h3>
+					<table>
+						<thead>
+							<tr>
+							    <th class="home_id_th" scope="col">ID</th>
+								<th class="home_title_th" scope="col">Title</th>
+								<th scope="col">Date of creation</th>
+								<th class="home_duration_th" scope="col">Duration <br> [days]</th>
+								<th scope="col">Capacity</th>
+								<th scope="col">Detail</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="group : ${invitedToGroups}">
+								<td th:text="${group.id}" scope="row"></td>
+								<td th:text="${group.title}" scope="row"></td>
+								<td th:text="${group.startDate}" scope="row"></td>
+								<td th:text="${group.duration}" scope="row"></td>
+								<td th:text="${group.minCapacity + ' - ' + group.maxCapacity}" scope="row"></td>
+								<td><a th:href= "@{GetGroupDetails(idGroup = ${group.id})}" th:class="detail_a">>></a></td>
+							</tr>				     
+						</tbody>
+					</table>	
+				</div>
+			
+			<div class="sub_container_5">
+				<h3 class="aligned_h3">new</h3>
+				<form action="CreateGroup" method="post">
+					<table id="create_form_table">
+						<tr>
+							<td> <label>Title: </label> </td>
+							<td> <input type="text" name="title" placeholder="required" required> <br> </td>
+						</tr>
+						<tr>
+							<td> <label>Duration (days): </label> </td>
+							<td> <input type="number" name="duration" min="1" placeholder="required" required>  </td>
+						</tr>
+						<tr>
+							<td> <label>Min user:</label> </td>
+							<td> <input type="number" name="minCapacity" min="2" placeholder="required" required> </td>
+						</tr>
+						<tr>
+							<td> <label>Max user:</label> </td>
+							<td> <input type="number" name="maxCapacity" placeholder="required" required> </td>
+						</tr>
+						<tr>
+							<td colspan="2"><button type="submit" id="create_form_button">CREATE</button></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

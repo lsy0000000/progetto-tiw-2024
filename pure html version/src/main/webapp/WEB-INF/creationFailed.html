@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/style.css"  th:href="@{/css/style.css}"/>
+	<title>Creation failed</title>
+</head>
+<body id="failed_body">
+	<div class="container_2">
+		<h3 class="aligned_h3 big_h3">CREATION FAILED</h3>
+		<p th:if =" ${creationErrorMsg != null}" th:text=" ${creationErrorMsg}"><p>
+		<a href="GoToHomePage">Home Page</a>
+	</div>
+
+</body>
+</html>

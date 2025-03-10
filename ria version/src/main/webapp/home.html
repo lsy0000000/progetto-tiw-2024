@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script src="js/home.js" charset="utf-8" defer></script>
+	<script src="js/utils.js" charset="utf-8" defer></script>
+	<title>Home</title>
+</head>
+<body id="home_body">
+	<div id="home_container">
+		<!-- Top part -->
+		<div class="sub_container_3">
+			<!-- User profile -->
+			<div class="sub_container_4" id = "profile_container">
+				<h3>Your profile [<a href="Logout">Logout</a>]</h3>
+				<table>
+					<tr>
+						<td>username:</td>
+						<td id = "profile_username"></td>
+						<td>e-mail:</td>
+						<td id = "profile_email"></td>
+					</tr>
+					<tr>
+						<td>name:</td>
+						<td id = "profile_name"></td>
+						<td>surname:</td>
+						<td id = "profile_surname"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+		<div class="sub_container_3 sub_container_5">
+
+			<!-- Groups the user created-->
+			<div class="sub_container_4 sub_container_6" >
+				<h3 class="underlined_h3">created by you</h3>
+				<table id="createdGroups_container">
+					<thead>
+						<tr>
+						    <th scope="col">ID</th>
+							<th scope="col">Title</th>
+							<th scope="col">Date of creation</th>
+							<th scope="col">Duration <br> [days]</th>
+							<th scope="col">Capacity</th>
+							<th scope="col">Details</th>
+						</tr>
+					</thead>
+					<tbody id="createdGroups_body">
+						<tr>
+						</tr>
+					</tbody>
+				</table>	
+			</div>
+			<!-- Groups the user was invited to-->
+			<div class="sub_container_4 sub_container_6">
+				<h3 class="underlined_h3">participated as invitee</h3>
+				<table id="invitedToGroups_container">
+					<thead>
+						<tr>
+						    <th scope="col">ID</th>
+							<th scope="col">Title</th>
+							<th scope="col">Date of creation</th>
+							<th scope="col">Duration <br> [days]</th>
+							<th scope="col">Capacity</th>
+							<th scope="col">Details</th>
+						</tr>
+					</thead>
+					<tbody id="invitedToGroups_body">
+						<tr>
+						</tr>
+					</tbody>
+				</table>	
+			</div>
+			
+		</div>
+		<div class=" sub_container_3 sub_container_5">
+			
+			<!-- Group detail -->
+			<div class="sub_container_4 sub_container_7" id="details_container">
+				<div>
+					<h3 class="underlined_h3">Group details</h3>
+					<table>
+						<thead>
+							<tr>
+								<td>ID</td>
+								<td>Title</td>
+								<td>Start</td>
+								<td>Duration</td>
+								<td>min [users]</td>
+								<td>max [users]</td>
+								<td>Creator</td>
+								<td></td>
+							</tr>
+						</thead>
+						<tbody id="groupInfo_body">
+						</tbody>
+					</table>
+				</div>
+				<div>
+					<h3>Participants</h3>
+					<table>
+						<thead>
+							<tr>
+								<th scope="col">Surname</th>
+								<th scope="col">Name</th>
+								<th scope="col">E-mail</th>
+								<th scope="col">Username</th>
+								
+							</tr>
+						</thead>
+						<tbody id="participantsInfo_body">
+						</tbody>
+					</table>
+				</div>
+				<div class="error_container" id="details_errorMsg"></div>		
+			</div>
+			<!-- Creation form -->
+			<div class="sub_container_4 sub_container_8">
+				<h3 class="underlined_h3">New</h3>
+				<form action="#" id="creation_form">
+					<table>
+						<tr>
+							<td> <label>Title: </label> </td>
+							<td> <input type="text" name="title" placeholder="required" required> <br> </td>
+						</tr>
+						<tr>
+							<td> <label>Duration [days]: </label> </td>
+							<td> <input type="number" name="duration" min="1" placeholder="required" required>  </td>
+						</tr>
+						<tr><td colspan="2">Num of participants:</td></tr>
+						<tr>
+							<td> <label>(minimum)</label> </td>
+							<td> <input type="number" name="minCapacity" min="2" placeholder="required" required> </td>
+						</tr>
+						<tr>
+							<td> <label>(maximum)</label> </td>
+							<td> <input type="number" name="maxCapacity" placeholder="required" required> </td>
+						</tr>
+						<tr class="sub_container_2">
+							<td colspan="2"><button class="create_button" id="creation_form_button">CREATE</button></td>
+						</tr>
+					</table>
+				</form>
+				<div class="error_container" id="creation_form_errorMsg"></div>
+			</div>
+
+		</div>
+	</div>
+		
+	
+	
+	<!-- Modal window -->
+	<div id="modal_container">
+		<div id="modal_content">
+			<h3 class="underlined_h3">Invitation</h3>
+			<table>
+				<thead>
+					<tr>
+						<td>Title</td>
+						<td>Duration</td>
+						<td>min [users]</td>
+						<td>max [users]</td>
+						<td>Creator</td>
+						<td></td>
+					</tr>
+				</thead>
+				<tbody id="modal_groupInfo_body">
+				</tbody>
+			</table>	
+			<p>Please selected your members!</p>
+			
+			<form action="#" id="modal_form">
+				<div class="users_container">
+					<table id="users_table">
+						<thead>
+							<tr>
+								<th scope="col">Surname</th>
+								<th scope="col">Name</th>
+								<th scope="col">E-mail</th>
+								<th scope="col">Username</th>
+								<th scope="col"></th>
+							</tr>
+						</thead>
+						<tbody id = "modal_usersInfo_body">
+							
+						</tbody>
+					</table>
+				</div>
+				<div><button id = "modal_form_button">Submit</button></div>	
+			</form>
+			<div id="modal_errorMsg_div"></div>
+			<div id="modal_times_div"></div>
+			<button class="modal_button" id="modal_cancellation_button" >CANCEL CREATION</button>
+		</div>
+		
+	</div>
+</body>
+</html>

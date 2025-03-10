@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" type="text/css" href="css/style.css" />
+   <title>Sign Up</title>
+</head>
+<body>
+   <div class="container" id ="container_signup">
+       
+      <h2 class="title">Sign Up</h2>
+      <form action="SignUp" method="POST">
+        
+         <div class="sub_container_1">
+             <label>Username</label> <br>
+		     <input type="text" name="username" placeholder="required" required> <br>
+             <label>Email</label> <br>
+             <input type="email" name="email" placeholder="required" required> <br>
+             <label>Name</label> <br>
+             <input type="text" name="name" placeholder="required" required> <br>
+             <label>Surname</label> <br>
+             <input type="text" name="surname" placeholder="required" required> <br>
+             <label>Password</label> <br>
+		     <input type="password" name="password" placeholder="required" required> <br>
+		     <label>Repeat password</label> <br>
+		     <input type="password" name="repeat_pwd" placeholder="required" required>
+         </div>
+
+         <div class="sub_container_2">
+             <button type="submit">SIGN UP</button>
+         </div>
+      </form>
+      <div class="sub_container_3">
+         format requirement: 1-64 characters, space not allowed
+         <br>
+         <span th:if=" ${signUpErrorMsg != null}" th:text=" ${signUpErrorMsg}" class="errorMsg"></span>
+         <br><br>
+         <a href="index.html">Login</a>
+      </div>
+   </div>
+</body>
+</html>

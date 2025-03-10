@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/style.css"  th:href="@{/css/style.css}" />
+	<title>Invite</title>
+</head>
+<body>
+	<div class="container container_1">
+		<div>
+			<h3 class="aligned_h3">Invitation</h3>
+			<table class="group_info_table">
+				<tr>
+					<td>Title: </td>
+					<td th:text="${groupToCreate.title}"></td>
+				</tr>
+				<tr>
+					<td>Duration:</td>
+					<td th:text="${groupToCreate.duration}"></td>
+				</tr>
+				
+				<tr>
+					<td>Min capacity:</td>
+					<td th:text="${groupToCreate.minCapacity}"></td>
+				</tr>
+				<tr>
+					<td>Max capacity:</td>
+					<td th:text="${groupToCreate.maxCapacity}"></td>
+				</tr>
+			</table>
+		</div>
+		<div class="sub_container_7">
+			<p th:if=" ${invitationErrorMsg != null}" th:text=" ${invitationErrorMsg}" th:class="errorMsg">Please selected your members!</p>
+			<form action="CheckInvitations" method="POST">
+				<table class="user_info_table">
+					<thead>
+						<tr>
+							<th scope="col"></th>
+							<th class="user_info_th" scope="col">Surname</th>
+							<th class="user_info_th" scope="col">Name</th>
+							<th class="user_info_th email_th" scope="col">E-mail</th>
+							<th class="user_info_th" scope="col">Username</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="user : ${users}">
+							<td>
+								 <input type="checkbox" th:value="${user.username}" name="selectedUsers" th:checked="${selectedUsers.contains(user.username)}">
+							</td>
+							<td th:text="${user.surname}" scope="row"></td>
+							<td th:text="${user.name}" scope="row"></td>
+							<td th:text="${user.email}" scope="row"></td>
+							<td th:text="${user.username}" scope="row"></td>
+						</tr>
+						<tr>
+							<td colspan="5">
+								<button class="button_1" id="invite_button" type="submit">Submit</button>
+							</td>
+						<tr>
+					</tbody>
+				</table>
+				
+			</form>
+			<form action="CancelCreation" method="get">
+				<input type="hidden" name="selfCancellation" value="true">
+				<button class="button_1" type="submit">Cancel creation</button>
+			</form>
+		</div>
+		
+	</div>
+
+</body>
+</html>

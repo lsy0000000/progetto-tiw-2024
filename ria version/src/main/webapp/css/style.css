@@ -1,0 +1,245 @@
+
+body{
+	background-color: #102C53;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18.5px;
+    min-width:1100px;
+}
+
+label{
+    font-size: 18px;
+    
+}
+
+input{
+    font-size: 16.5px;
+    width: 98%;
+}
+
+h3{
+	font-size: 20px;
+	padding-top:10px;
+	padding-bottom:1%;
+	margin-bottom:0;
+	margin-top:0;
+	text-transform:uppercase;
+}
+
+thead{
+	background-color: lightgray;
+}
+
+
+.container, .sub_container_4{
+	background-color: white;
+    border-radius: 7px;
+    border: 2px black solid;
+}
+
+.sub_container_0{
+	display: flex;
+    justify-content: center;
+    margin:5%;
+    margin-bottom:8%;
+}
+
+.sub_container_1{
+	width: 69%;
+	margin-bottom: 6%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sub_container_2{
+    text-align: center;
+}
+
+.sub_container_3{
+	width: 100%;
+	
+}
+
+.sub_container_4{
+	padding: 1%;
+	padding-bottom:2%;
+}
+
+.sub_container_5{
+	display: flex;
+    justify-content: center;
+}
+
+.sub_container_6{
+	width:50%;
+	text-align: center;
+	overflow-y: auto;
+	height:280px;
+}
+
+
+table{
+	width:100%;
+}
+
+.sub_container_7{
+	width:65%;
+	text-align: center;
+	
+}
+
+.sub_container_8{
+	width:35%;
+}
+
+.error_container, #modal_errorMsg_div{
+	text-align:center;
+	color:darkred;
+}
+
+.access_title{
+	cursor: pointer;
+}
+
+.access_title{
+	font-size: 33px;
+    padding: 2%;
+    cursor:hand;
+    border: 1px solid gray;
+    text-align: center;
+    width: 150px;
+}
+
+.access_button{
+	font-size: 22px;
+    padding: 2.1%;
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-bottom: 8%;
+}
+
+.create_button{
+	font-size: 19px;
+    padding: 1.5%;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-top:4.5%;
+    margin-bottom:3%;
+}
+
+.modal_button, #modal_form_button{
+	margin-top:1%;
+	margin-bottom:1%;
+	padding:1%;
+	text-transform:uppercase;
+	font-size: 17px;
+}
+
+.underlined_h3{
+	text-align: center;
+	border-bottom: 1px solid lightgray;
+	margin-bottom: 4%;
+	font-size: 21px;
+}
+
+#signup_title{
+	background-color: lightgray;
+}
+
+#access_container{
+	padding:3%;
+	min-width: 400px;
+    border: 2px black solid;
+    padding-bottom:4%;
+}
+
+
+#login_container input{
+	margin-top:1%;
+	margin-bottom:5%;
+}
+
+#signup_container input{
+	margin-top:1%;
+	margin-bottom:3%;
+}
+
+
+#signup_container{
+	display: none;
+}
+
+#home_container{
+	width:87%;
+}
+
+
+
+#profile_container{
+	margin-bottom: 0.2%;
+}
+
+
+#profile_container td, .group_info_table td{
+	text-align:left;
+	min-width: 100px;
+}
+
+#profile_container table{
+	width:auto;
+}
+
+
+#bin_img{
+	width:20px;
+	height:20px;
+}
+
+
+
+#modal_container{
+	display: none;
+	position: absolute;
+	overflow: auto; 
+	width: 100%; /* Full width */
+    height: 100%; 
+	background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#modal_content{
+	padding:3%;
+	position:absolute;
+	background-color: white;
+	text-align:center;
+	width: 70%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	height:70%;
+}
+
+.users_container table, .users_container tbody{
+	display:inline-block;
+	height: 140px;
+}
+
+
+.users_container tbody{
+	overflow-y:auto;
+}
+
+.users_container table thead, .users_container tbody tr{
+	display: table;
+	width:100%;
+	table-layout:fixed;
+}
+
+#modal_form_button{
+	margin-top:5%;
+}
+
+
+
+
+

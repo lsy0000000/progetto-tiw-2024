@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" type="text/css" href="css/style.css" />
+   <script src="js/utils.js" charset="utf-8" defer></script>
+   <script src="js/access.js" charset="utf-8" defer></script>
+   <title>Access</title>
+</head>
+<body>
+	<div class="container" id="access_container">
+		<div class="sub_container_0">
+			<div class="access_title" id = "login_title">Login</div>
+			<div class="access_title" id = "signup_title">Sign Up</div>
+		</div>
+	    <!-- Login -->
+		<div id="login_container">       
+			<form action="#">
+				<div class="sub_container_1">
+					<label>Username</label> <br>
+					<input type="text" name="username" placeholder="required" required>
+					<br>
+				    <label>Password</label> <br>
+					<input type="password" name="password" placeholder="required" required>
+			    </div>
+				<div class="sub_container_2">
+				    <button class="access_button" id="login_button">LOGIN</button>
+				</div>
+			</form>
+			<div class="error_container" id="login_error_msg"></div>
+		</div>
+		<!-- Sign up -->
+		<div id="signup_container">
+			<form action="#">
+			   <div class="sub_container_1">
+					<label>Username</label> <br>
+					<input type="text" name="username" placeholder="required" required> <br>
+					<label>Email</label> <br>
+					<input type="email" name="email" placeholder="required" id="email" required> <br>
+					<label>Name</label> <br>
+					<input type="text" name="name" placeholder="required" required> <br>
+					<label>Surname</label> <br>
+					<input type="text" name="surname" placeholder="required" required> <br>
+					<label>Password</label> <br>
+					<input type="password" name="password" placeholder="required" id="pwd1" required> <br>
+					<label>Repeat password</label> <br>
+					<input type="password" name="repeat_pwd" placeholder="required" id="pwd2" required>
+			   </div>
+			   <div class="sub_container_2">
+			       <button class="access_button" id="signup_button">SIGN UP</button>
+			   </div>
+			</form>
+			<div class="error_container"  id="signup_error_msg"></div>
+		</div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/style.css"  th:href="@{/css/style.css}" />
+	<title>Group details</title>
+</head>
+<body>
+	<div class="container container_1" id="detail_container">
+		<div>
+			<h3 class="aligned_h3">Group details</h3>
+			<table class="group_info_table" id="detail_group_table">
+				<tr>
+					<td>ID: </td>
+					<td th:text="${group.id}"></td>
+				</tr>
+				<tr>
+					<td>Title: </td>
+					<td th:text="${group.title}"></td>
+				</tr>
+				<tr>
+					<td>Date of creation:&nbsp;</td>
+					<td th:text="${group.startDate}"></td>
+				</tr>
+				<tr>
+					<td>Duration:</td>
+					<td th:text="${group.duration}"></td>
+				</tr>
+				<tr>
+					<td>Min capacity:</td>
+					<td th:text="${group.minCapacity}"></td>
+				</tr>
+				<tr>
+					<td>Max capacity:</td>
+					<td th:text="${group.maxCapacity}"></td>
+				</tr>
+				<tr>
+					<td>Creator: </td>
+					<td th:text="${group.creator}"></td>
+				</tr>
+			</table>
+		</div>
+		<div>
+			<h3 class="aligned_h3">Participants</h3>
+			<table class="user_info_table" >
+				<thead>
+					<tr>
+						<th class="user_info_th" scope="col">Surname</th>
+						<th class="user_info_th" scope="col">Name</th>
+						<th class="user_info_th email_th"scope="col">E-mail</th>
+						<th class="user_info_th" scope="col">Username</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user : ${participants}">
+						<td th:text="${user.surname}" scope="row"></td>
+						<td th:text="${user.name}" scope="row"></td>
+						<td th:text="${user.email}" scope="row"></td>
+						<td th:text="${user.username}" scope="row"></td>
+					</tr>
+				</tbody>
+			</table>		
+		</div>
+		<div class="sub_container_6"><a href="GoToHomePage">Home Page</a></div>
+	</div>
+</body>
+</html>
